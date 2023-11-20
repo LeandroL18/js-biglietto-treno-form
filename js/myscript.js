@@ -15,5 +15,26 @@ const userEta = document.getElementById("eta");
 const calcButton = document.getElementById("calcola");
 const cancelButton = document.getElementById("annulla");
 
+// definizione variabili
+let prezzo = 0;
+let prezzoscontato = 0
 
+
+// al click del bottone calcola
+calcButton.addEventListener("click",
+    function() {
+        // calcolo prezzo
+        prezzo = userKm.value * 0.21;
+
+        // Sconto del 20% per minorenni o 40% per over 65
+        if (userEta.value < 18) {
+            prezzoscontato = prezzo - ((prezzo / 100) * 20);
+        } else if (userEta.value > 65) {
+            prezzoscontato = prezzo - ((prezzo / 100) * 40);
+        } 
+
+        console.log (prezzo,prezzoscontato)
+    }
+
+)
 
