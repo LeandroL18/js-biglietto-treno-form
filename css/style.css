@@ -3,3 +3,44 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root{
+    text-align: center;
+    background-color: brown;
+    color: white;
+}
+
+h1{
+    margin: 10px 0;
+}
+
+/* Stili contenitore bianco */
+.container_white{
+    background-color: white;
+    width: 70%;
+    margin: 20px auto;
+    color: brown;
+    border-radius: 10px;
+    padding: 20px;
+}
+.row{
+    display: flex;
+    justify-content: center;
+}
+.row input{
+    width: 220px;
+    padding: 5px;
+    border: 1px solid brown;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.row button{
+    margin: 20px 20px 0 20px;
+    padding: 5px;
+    border: 1px solid brown;
+    border-radius: 10px;
+}
+ 
+.col{
+    padding:0 10px;
+}

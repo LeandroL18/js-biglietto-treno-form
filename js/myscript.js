@@ -17,8 +17,6 @@ const cancelButton = document.getElementById("annulla");
 
 // definizione variabili
 let prezzo = 0;
-let prezzoscontato = 0
-
 
 // al click del bottone calcola
 calcButton.addEventListener("click",
@@ -28,13 +26,18 @@ calcButton.addEventListener("click",
 
         // Sconto del 20% per minorenni o 40% per over 65
         if (userEta.value < 18) {
-            prezzoscontato = prezzo - ((prezzo / 100) * 20);
+            prezzo = prezzo - ((prezzo / 100) * 20);
         } else if (userEta.value > 65) {
-            prezzoscontato = prezzo - ((prezzo / 100) * 40);
+            prezzo = prezzo - ((prezzo / 100) * 40);
         } 
 
-        console.log (prezzo,prezzoscontato)
+        console.log (prezzo)
     }
 
 )
 
+cancelButton.addEventListener("click",
+    function() {
+        prezzo = 0;
+    }
+)
