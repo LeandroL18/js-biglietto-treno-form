@@ -16,28 +16,28 @@ const calcButton = document.getElementById("calcola");
 const cancelButton = document.getElementById("annulla");
 
 // definizione variabili
-let prezzo = 0;
 
 // al click del bottone calcola
 calcButton.addEventListener("click",
     function() {
+
+        //faccio comparire il biglietto
+        document.getElementById("biglietto").style.display = "block";
+
         // calcolo prezzo
-        prezzo = userKm.value * 0.21;
+        let prezzo = userKm.value * 0.21;
 
         // Sconto del 20% per minorenni o 40% per over 65
         if (userEta.value < 18) {
             prezzo = prezzo - ((prezzo / 100) * 20);
+            document.getElementById("tipobiglietto").innerHTML = "Biglietto scontato del 20%";
         } else if (userEta.value > 65) {
             prezzo = prezzo - ((prezzo / 100) * 40);
+            document.getElementById("tipobiglietto").innerHTML = "Biglietto scontato del 40%";
         } 
 
-        console.log (prezzo)
-    }
-
-)
-
-cancelButton.addEventListener("click",
-    function() {
-        prezzo = 0;
+        // stampo 
+        document.getElementById("stampanome").innerHTML = userName.value;
+        document.getElementById("stampaprezzo").innerHTML = prezzo.toFixed(2);
     }
 )
